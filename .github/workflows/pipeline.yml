@@ -18,8 +18,12 @@ jobs:
 
     steps:
 
+      - name: Set up environment variables
+        run: |
+          echo "SECRET_VALUE=${{ secrets.YOUR_SECRET_NAME }}" >> $GITHUB_ENV
+
       - name: Print Secret Value
-        run: echo ${{ secrets.SN_USERNAME }}
+        run: echo $SECRET_VALUE
 
       - name: ServiceNow CI/CD Apply Changes
         uses: ServiceNow/sncicd-apply-changes@1.2.1
