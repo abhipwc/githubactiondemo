@@ -19,7 +19,7 @@ jobs:
     steps:
 
       - name: ServiceNow CI/CD Apply Changes
-        uses: ServiceNow/sncicd-apply-changes@2.0.0
+        uses: ServiceNow/sncicd-apply-changes@1.0.0
         env:
           nowUsername: admin
           nowPassword: n#>iec;6w2XFT3<9;2*h_drZ9]D?=05c+=7
