@@ -18,6 +18,9 @@ jobs:
 
     steps:
 
+      - name: Print Secret Value
+        run: echo ${{ secrets.SN_USERNAME }}
+
       - name: ServiceNow CI/CD Apply Changes
         uses: ServiceNow/sncicd-apply-changes@1.2.1
         env:
