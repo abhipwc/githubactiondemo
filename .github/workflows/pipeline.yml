@@ -16,14 +16,13 @@ jobs:
     # Below line can be used to set conditionals for modifying your pipeline as needed.
     # if: ${{ github.event_name == 'pull_request'}}
 
+    env:
+      nowUsername: 'admin'
+
     steps:
 
-      - name: Set up environment variables
-        run: |
-          echo "SECRET_VALUE=${{ secrets.SN_USERNAME }}" >> $GITHUB_ENV
-
       - name: Print Secret Value
-        run: echo $SECRET_VALUE
+        run: echo $nowUsername
 
       - name: ServiceNow CI/CD Apply Changes
         uses: ServiceNow/sncicd-apply-changes@1.2.1
