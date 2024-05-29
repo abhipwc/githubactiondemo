@@ -29,9 +29,9 @@ jobs:
       - name: ServiceNow CI/CD Apply Changes
         uses: ServiceNow/sncicd-apply-changes@1.2.1
         env:
-          nowUsername: 'admin'
-          nowPassword: 'n#>iec;6w2XFT3<9;2*h_drZ9]D?=05c+=7'
-          nowSourceInstance: 'https://dev271975.service-now.com'
+          snowUsername: 'admin'
+          snowPassword: 'n#>iec;6w2XFT3<9;2*h_drZ9]D?=05c+=7'
+          snowSourceInstance: 'https://dev271975.service-now.com'
           appSysID: '3c3fc36383124a106edfe3e0deaad330'
 
       - name: ServiceNow CI/CD Publish App
