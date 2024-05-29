@@ -19,8 +19,11 @@ jobs:
 
     steps:
 
+      - name: Check connectivity to servicenow instance
+        run: ping -c 4 ${{ secrets.SN_DEV_INSTANCE }}
+
       - name: curl
-        run: curl -X GET https://dev271975.service-now.com
+        run: curl -X GET ${{ secrets.SN_DEV_INSTANCE }}
 
       - name: telnet
         run: telnet dev271975.service-now.com 443
