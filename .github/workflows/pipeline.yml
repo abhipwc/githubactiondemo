@@ -19,11 +19,11 @@ jobs:
 
     steps:
 
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
       - name: curl
         run: curl -X GET ${{ secrets.SN_DEV_INSTANCE }}
-
-      - name: telnet
-        run: telnet dev271975.service-now.com 443
 
       - name: ServiceNow CI/CD Apply Changes
         uses: ServiceNow/sncicd-apply-changes@1.2.1
