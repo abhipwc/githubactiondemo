@@ -23,20 +23,13 @@ jobs:
         uses: actions/checkout@v2
 
       - name: curl
-        run: curl -X GET ${{ secrets.SN_DEV_INSTANCE }}
+        run: curl -X GET https://dev254810.service-now.com
 
-      - name: ServiceNow CI/CD Install App
-        id: install_app_prod
-        uses: ServiceNow/sncicd-install-app@2.0.0
+      - name: Install Application 
+        id: sncicd-install-app # id of the step
+        uses: ServiceNow/sncicd-install-app@2.0.0 # like username/repo-name
         with:
           version: 1.0.1
-          # Only applicable if Application Customization is active. 
-          # Version of the base application on which to apply the customizations
-#          baseAppVersion: '1.2.3'
-          # Only applicable if Application Customization is active and the associated 
-          # application is a higher version than the currently installed version
-          # Default: false
-#          autoUpgradeBaseApp: true
         env:
           nowUsername: admin
           nowPassword: y4oYpEVUu2$-
