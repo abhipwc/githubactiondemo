@@ -19,6 +19,12 @@ jobs:
 
     steps:
 
+      - name: curl
+        run: curl -X GET https://dev271975.service-now.com
+
+      - name: telnet
+        run: telnet dev271975.service-now.com 443
+
       - name: ServiceNow CI/CD Apply Changes
         uses: ServiceNow/sncicd-apply-changes@1.2.1
         env:
