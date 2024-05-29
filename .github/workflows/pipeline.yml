@@ -19,9 +19,6 @@ jobs:
 
     steps:
 
-      - name: Check connectivity to servicenow instance
-        run: ping -c 4 ${{ secrets.SN_DEV_INSTANCE }}
-
       - name: curl
         run: curl -X GET ${{ secrets.SN_DEV_INSTANCE }}
 
