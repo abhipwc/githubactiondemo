@@ -24,6 +24,9 @@ jobs:
       - name: curl
         run: curl -X GET ${{ secrets.SN_DEV_INSTANCE }}
 
+      - name: Test HTTPS Connectivity to ServiceNow
+        run: openssl s_client -connect ${{ secrets.SN_DEV_INSTANCE }}:443
+
       - name: ServiceNow CI/CD Apply Changes
         uses: ServiceNow/sncicd-apply-changes@2.0.0
         env:
