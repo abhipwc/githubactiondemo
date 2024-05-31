@@ -24,9 +24,6 @@ jobs:
       - name: curl
         run: curl -X GET ${{ secrets.SN_DEV_INSTANCE }}
 
-      - name: DNS Lookup for ServiceNow Instance
-        run: nslookup ${{ secrets.SN_DEV_INSTANCE }}
-
       - name: ServiceNow CI/CD Apply Changes
         uses: ServiceNow/sncicd-apply-changes@2.0.0
         env:
