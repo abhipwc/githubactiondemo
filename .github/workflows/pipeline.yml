@@ -22,15 +22,12 @@ jobs:
         uses: actions/checkout@v2
 
       - name: curl
-        run: curl -X GET ${{ secrets.SN_DEV_INSTANCE }}
-
-      - name: Test HTTPS Connectivity to ServiceNow
-        run: openssl s_client -connect ${{ secrets.SN_DEV_INSTANCE }}:443
+        run: curl -X GET http://dev271975.service-now.com
 
       - name: ServiceNow CI/CD Apply Changes
         uses: ServiceNow/sncicd-apply-changes@2.0.0
         env:
           nowUsername: ${{ secrets.SN_USERNAME }}
           nowPassword: ${{ secrets.SN_PASSWORD }}
-          nowSourceInstance: ${{ secrets.SN_DEV_INSTANCE }}
+          nowSourceInstance: http://dev271975.service-now.com
           appSysID: ${{ secrets.SN_APP_SYSID }}
