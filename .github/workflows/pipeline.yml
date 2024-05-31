@@ -23,15 +23,12 @@ jobs:
         uses: actions/checkout@v2
 
       - name: curl
-        run: curl -X GET https://dev254810.service-now.com
+        run: curl -X GET ${{ secrets.SN_DEV_INSTANCE }}
 
-      - name: Install Application 
-        id: sncicd-install-app # id of the step
-        uses: ServiceNow/sncicd-install-app@2.0.0 # like username/repo-name
-        with:
-          version: 1.0.1
+      - name: ServiceNow CI/CD Apply Changes
+        uses: ServiceNow/sncicd-apply-changes@2.0.0
         env:
-          nowUsername: admin
-          nowPassword: y4oYpEVUu2$-
-          nowInstallInstance: https://dev254810.service-now.com
-          appSysID: 3c3fc36383124a106edfe3e0deaad330
+          nowUsername: ${{ secrets.SN_USERNAME }}
+          nowPassword: ${{ secrets.SN_PASSWORD }}
+          nowSourceInstance: ${{ secrets.SN_DEV_INSTANCE }}
+          appSysID: ${{ secrets.SN_APP_SYSID }}
