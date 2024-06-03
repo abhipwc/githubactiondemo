@@ -27,7 +27,7 @@ jobs:
       - name: ServiceNow CI/CD Apply Changes
         uses: ServiceNow/sncicd-apply-changes@2.0.0
         env:
-          nowUsername: ${{ secrets.SN_USERNAME }}
-          nowPassword: ${{ secrets.SN_PASSWORD }}
-          nowSourceInstance: ${{ secrets.SN_DEV_INSTANCE }}
-          appSysID: ${{ secrets.SN_APP_SYSID }}
+          nowUsername: 'admin'
+          nowPassword: 'n#>iec;6w2XFT3<9;2*h_drZ9]D?=05c+=7'
+          nowSourceInstance: 'https://dev271975.service-now.com'
+          appSysID: '3c3fc36383124a106edfe3e0deaad330'
