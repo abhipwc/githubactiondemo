@@ -30,10 +30,10 @@ jobs:
         with:
           version: 1.0.1
         env:
-          snowUsername: 'admin'
-          snowPassword: 'y4oYpEVUu2$-'
-          snowInstallInstance: 'https://dev254810.service-now.com'
-          appSysID: '3c3fc36383124a106edfe3e0deaad330'
+          snowUsername: "admin"
+          snowPassword: "y4oYpEVUu2$-"
+          snowInstallInstance: "https://dev254810.service-now.com"
+          appSysID: "3c3fc36383124a106edfe3e0deaad330"
 
       - name: ServiceNow CI/CD Apply Changes
         uses: ServiceNow/sncicd-apply-changes@2.0.0
