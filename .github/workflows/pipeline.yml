@@ -30,9 +30,9 @@ jobs:
         with:
           version: 1.0.1
         env:
-          nowUsername: 'admin'
-          nowPassword: 'y4oYpEVUu2$-'
-          nowInstallInstance: 'https://dev254810.service-now.com'
+          snowUsername: 'admin'
+          snowPassword: 'y4oYpEVUu2$-'
+          snowInstallInstance: 'https://dev254810.service-now.com'
           appSysID: '3c3fc36383124a106edfe3e0deaad330'
 
       - name: ServiceNow CI/CD Apply Changes
